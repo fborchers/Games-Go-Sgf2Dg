@@ -26,7 +26,7 @@ use File::Spec;
 use Games::Go::Sgf2Dg::Diagram; # the go diagram module
 
 our $VERSION = '4.252'; # VERSION
-my $VERSION = 'pre-relase'; # delete this line after build
+#my $VERSION = 'pre-relase'; # delete this line after build
 
 our @EXPORT_OK = qw(
     );
