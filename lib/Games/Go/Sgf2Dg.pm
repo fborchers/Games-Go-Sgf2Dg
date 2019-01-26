@@ -1412,11 +1412,7 @@ sub parse_command_line {
         } elsif (($arg eq '-rl') or ($arg eq '-repeatLast')) {
             $option{repeatLast} = 1;
         } elsif (($arg eq '-break') or ($arg eq '-breakList')) {
-            my $breaks = '';
-            while (@ARGV and
-                   $ARGV[0] =! m/[\d,]*/) {
-                $breaks .= shift @ARGV;
-            }
+            my $breaks = shift @ARGV;
             @{$option{breakList}} = sort {$a <=> $b} split(/,/, $breaks);
         } elsif (($arg eq '-t') or ($arg eq '-top')) {
             $option{topLine} = shift(@ARGV);
