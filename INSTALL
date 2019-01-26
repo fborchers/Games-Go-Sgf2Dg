@@ -37,6 +37,11 @@ If you are installing to a non-system TeX installation (ie: your
 own personal TeX hierarchy), you will almost certainly need to
 edit tex/Makefile.
 
+If 'make' fails it may have a simple reason: After running 'perl Makefile.pl' 
+there will be a file with filename 'Makefile'. If this file contains an
+otherwise empty line with a space and single quotes (' ') delete
+that line. 'Make' should then be successful
+
 
 Since this installation procedure is significantly different from
 previous releases, you may need to hunt down and delete files from
