@@ -1657,22 +1657,22 @@ sub auto_bounds {
 
     # Note: VieW has priority over crop option
     unless ($vw) { # if ($option{crop}) {
-        # Leave two empty lines on each side.
-        $left -= 2;
-        $right += 2;
-        $top -= 2;
-        $bottom += 2;
+        # Leave three (two) empty lines on each side.
+        $left -= 3;
+        $right += 3;
+        $top -= 3;
+        $bottom += 3;
 
         # don't leave out just border lines
-        $left   = 1 if $left <= 2;
+        $left   = 1 if $left <= 3;
         $right  = $dg2->{boardSizeX} if $right >= $dg2->{boardSizeX} - 1;
-        $top    = 1 if $top <= 2;
+        $top    = 1 if $top <= 3;
         $bottom = $dg2->{boardSizeY} if $bottom >= $dg2->{boardSizeY} - 1;
 
         # don't cut off one line away from the border 
-        $left   = $option{leftLine}   unless $left   > 2;
+        $left   = $option{leftLine}   unless $left   > 3;
         $right  = $option{rightLine}  unless $right  < $dg2->{boardSizeX} - 1;
-        $top    = $option{topLine}    unless $top    > 2;
+        $top    = $option{topLine}    unless $top    > 3;
         $bottom = $option{bottomLine} unless $bottom < $dg2->{boardSizeY} - 1;
     }
     $dg2->configure(leftLine => $left,
